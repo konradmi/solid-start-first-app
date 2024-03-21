@@ -1,18 +1,17 @@
 import { createSignal, createResource } from "solid-js"
-import type { RouteDefinition } from "@solidjs/router";
 
-const fetchTodosFirst = async () => {
-  const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
-    const json = await response.json()
-    return json
+const getPost = async () => {
+  console.log('fetching post')
+  const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+  return (await response.json()).body
 }
-
+ 
 export const route = {
-  load: () => fetchTodosFirst(),
-} satisfies RouteDefinition
+  load: () => getPost()
+};
 
 const Details = (props) => {
-  const [blog] = createResource(() => fetchTodosFirst())
+  const [blog] = createResource(() => getPost())
   const [count, setCount] = createSignal(0);
   return (
     <div>
