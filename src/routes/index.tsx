@@ -23,8 +23,8 @@ export default function Home() {
       <For each={posts()} fallback={<div>Loading...</div>}>
         {(post) => {
           return (
-              <div>
-                <a href={`/post/${post.id}`}>
+              <div class="p-3">
+                <a class="text-blue-600 dark:text-blue-500 hover:underline" href={`/post/${post.id}`}>
                   <h1>{post.title}</h1>
                 </a>
                 <p>{post.body}</p>

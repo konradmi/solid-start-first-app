@@ -21,9 +21,9 @@ const SinglePost = () => {
 
   return (
     <div>
-      <h1>Post {post() && post()!.id}</h1>
-      <h2>{post() && post()!.title}</h2>
-      <p>{post() && post()!.body}</p>
+      <h1 class="p-3">Post {post() && post()!.id}</h1>
+      <h2 class="pl-5 font-semibold">{post() && post()!.title}</h2>
+      <p class="pl-7">{post() && post()!.body}</p>
     </div>
   );
 }
